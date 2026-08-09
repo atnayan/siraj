@@ -1,1 +1,1236 @@
-Hello Siraj!
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="مؤسسة سراج - مؤسسة تربوية تعنى ببناء جيل شبابي رباني فاعل في مجتمعه. بالعلم نرتقي." />
+  <title>مؤسسة سراج | بالعلم نرتقي</title>
+
+  <style>
+    :root {
+      --teal-950: #042f3f;
+      --teal-900: #064454;
+      --teal-850: #07515e;
+      --teal-800: #075869;
+      --teal-700: #0f766e;
+      --teal-600: #0d9488;
+      --teal-500: #14b8a6;
+      --teal-300: #5eead4;
+      --mint: #2ec59b;
+      --cream: #f7fffb;
+      --white: #ffffff;
+      --ink: #123241;
+      --muted: #5f7b86;
+      --shadow: 0 28px 80px rgba(3, 47, 63, 0.22);
+      --soft-shadow: 0 16px 44px rgba(3, 47, 63, 0.12);
+      --radius-xl: 38px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f2fbf8;
+      color: var(--ink);
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      right: 18px;
+      z-index: 9999;
+      background: var(--white);
+      color: var(--teal-900);
+      padding: 10px 16px;
+      border-radius: 12px;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 18px;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 auto 0;
+      background: rgba(4, 47, 63, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--white);
+      padding: 4px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+      flex: 0 0 auto;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--teal-300);
+      font-weight: 700;
+      margin-top: -5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--teal-300);
+      transform: translateY(-2px);
+    }
+
+    .nav-cta {
+      background: var(--white);
+      color: var(--teal-900) !important;
+      padding: 9px 16px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      padding: 140px 0 90px;
+      color: var(--white);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.34), transparent 28%),
+        linear-gradient(140deg, #042f3f 0%, #075869 48%, #10a28f 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      opacity: 0.16;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.4) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(255,255,255,0.24) 1px, transparent 1px);
+      background-size: 62px 62px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%) rotate(45deg);
+      z-index: -2;
+      border-radius: 90px 160px 90px 160px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: inset 0 0 60px rgba(255,255,255,0.06), 0 35px 100px rgba(0,0,0,0.18);
+    }
+
+    .arch-bg {
+      position: absolute;
+      inset: 8% auto auto 7%;
+      width: min(520px, 60vw);
+      opacity: 0.16;
+      z-index: -2;
+      filter: blur(0.2px);
+    }
+
+    .glow-star {
+      position: absolute;
+      width: 138px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.95) 0 8%, rgba(255,255,255,0.52) 9% 16%, transparent 48%);
+      filter: blur(1px);
+      opacity: 0.72;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .glow-star.one { top: 20%; left: 9%; }
+    .glow-star.two { bottom: 16%; right: 9%; width: 105px; animation-delay: 1.25s; }
+
+    .ornaments {
+      position: absolute;
+      top: 120px;
+      display: grid;
+      gap: 12px;
+      opacity: 0.92;
+      z-index: 1;
+    }
+
+    .ornaments.left { left: 32px; }
+    .ornaments.right { right: 32px; top: auto; bottom: 115px; }
+
+    .ornament {
+      width: 28px;
+      height: 28px;
+      opacity: 0.72;
+      animation: floatTiny 5s ease-in-out infinite;
+    }
+
+    .ornament:nth-child(2) { animation-delay: 0.4s; opacity: 0.46; }
+    .ornament:nth-child(3) { animation-delay: 0.8s; }
+    .ornament:nth-child(4) { animation-delay: 1.2s; opacity: 0.46; }
+    .ornament:nth-child(5) { animation-delay: 1.6s; }
+
+    .hero-content {
+      max-width: 980px;
+      margin-inline: auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-logo-wrap {
+      width: 168px;
+      height: 168px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 38px;
+      padding: 18px;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.26), 0 0 0 1px rgba(255,255,255,0.35);
+    }
+
+    .main-logo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.88);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 46px;
+      height: 1px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.3rem, 8vw, 6.3rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+      text-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    }
+
+    .slogan {
+      font-size: clamp(1.25rem, 3vw, 1.85rem);
+      color: #dffdf7;
+      margin: 14px 0 22px;
+      font-weight: 800;
+    }
+
+    .hero-text {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: clamp(1.03rem, 2vw, 1.22rem);
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 2.15;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-4px);
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--teal-900);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.34);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      gap: 6px;
+      place-items: center;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .scroll-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .scroll-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.45);
+    }
+
+    .scroll-dots span:first-child {
+      background: var(--white);
+      width: 18px;
+    }
+
+    section {
+      position: relative;
+      padding: 106px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      color: var(--teal-700);
+      font-weight: 900;
+      background: rgba(20,184,166,0.12);
+      padding: 7px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.25;
+      color: var(--teal-950);
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      max-width: 760px;
+      margin: 14px auto 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .intro {
+      background:
+        radial-gradient(circle at 88% 8%, rgba(20,184,166,0.16), transparent 26%),
+        linear-gradient(180deg, #f2fbf8 0%, #ffffff 100%);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .organic-card {
+      position: relative;
+      background: var(--white);
+      border-radius: 58px 34px 64px 36px;
+      padding: clamp(28px, 4vw, 48px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(15,118,110,0.1);
+    }
+
+    .organic-card::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      left: -90px;
+      bottom: -90px;
+      background: radial-gradient(circle, rgba(20,184,166,0.17), transparent 68%);
+    }
+
+    .organic-card::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      pointer-events: none;
+      border-radius: 48px 28px 54px 30px;
+      border: 1px solid rgba(15,118,110,0.14);
+    }
+
+    .organic-card p {
+      font-size: 1.1rem;
+      color: #274657;
+      position: relative;
+      z-index: 1;
+    }
+
+    .vision-mission {
+      display: grid;
+      gap: 20px;
+    }
+
+    .deep-card {
+      border-radius: 36px;
+      padding: 34px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(94,234,212,0.28), transparent 34%),
+        linear-gradient(135deg, #064454, #075869 56%, #0f766e);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .deep-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -30px -55px auto;
+      width: 160px;
+      height: 160px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+
+    .deep-card h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .deep-card p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .values {
+      background: #ffffff;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .value-card,
+    .program-card,
+    .feature-card,
+    .contact-box {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(15,118,110,0.1);
+      box-shadow: var(--soft-shadow);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card:hover,
+    .program-card:hover,
+    .feature-card:hover,
+    .contact-box:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(20,184,166,0.32);
+    }
+
+    .icon-badge {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: linear-gradient(135deg, rgba(20,184,166,0.18), rgba(4,47,63,0.08));
+      margin-bottom: 18px;
+      color: var(--teal-800);
+    }
+
+    .value-card h3,
+    .program-card h3,
+    .feature-card h3 {
+      font-size: 1.35rem;
+      color: var(--teal-950);
+      margin-bottom: 8px;
+    }
+
+    .value-card p,
+    .program-card p,
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .programs {
+      background:
+        radial-gradient(circle at 12% 14%, rgba(20,184,166,0.16), transparent 26%),
+        linear-gradient(180deg, #ecfffb 0%, #f7fffb 100%);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .program-card {
+      min-height: 230px;
+    }
+
+    .why {
+      background: linear-gradient(135deg, var(--teal-950), var(--teal-800));
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .why::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(45deg, white 1px, transparent 1px),
+        linear-gradient(-45deg, white 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    .why .section-heading h2,
+    .why .section-heading p {
+      color: var(--white);
+    }
+
+    .why .section-kicker {
+      color: var(--white);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.09);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .feature-card h3,
+    .feature-card p {
+      color: var(--white);
+    }
+
+    .feature-card p {
+      opacity: 0.84;
+    }
+
+    .stats {
+      background: #ffffff;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 30px 18px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #ffffff, #f4fffc);
+      border: 1px solid rgba(15,118,110,0.1);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .stat-card strong {
+      display: block;
+      color: var(--teal-700);
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      margin-bottom: 9px;
+      font-weight: 900;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .join {
+      padding: 86px 0;
+      background:
+        radial-gradient(circle at 26% 20%, rgba(255,255,255,0.18), transparent 28%),
+        linear-gradient(135deg, #075869, #0f766e 64%, #14b8a6);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .join-card {
+      width: min(920px, 100%);
+      margin-inline: auto;
+      padding: clamp(34px, 6vw, 58px);
+      border-radius: 46px 28px 46px 28px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.18);
+    }
+
+    .join h2 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .join p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.08rem;
+    }
+
+    .contact {
+      background: linear-gradient(180deg, #f7fffb, #ffffff);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .social-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--teal-700), var(--teal-850));
+      color: var(--white);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-weight: 900;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus {
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-top: 16px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--teal-950);
+      font-weight: 900;
+      font-size: 0.96rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(15,118,110,0.16);
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--teal-500);
+      box-shadow: 0 0 0 4px rgba(20,184,166,0.14);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 15px 26px;
+      background: linear-gradient(135deg, var(--teal-700), var(--teal-900));
+      color: var(--white);
+      font: inherit;
+      font-weight: 900;
+      box-shadow: 0 18px 36px rgba(15,118,110,0.24);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      transform: translateY(-3px);
+      filter: brightness(1.04);
+    }
+
+    .site-footer {
+      background: #042f3f;
+      color: rgba(255,255,255,0.86);
+      padding: 34px 0;
+      text-align: center;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--teal-300);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.08); opacity: 0.88; }
+    }
+
+    @keyframes floatTiny {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    @media (max-width: 1020px) {
+      .cards-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .program-grid,
+      .feature-grid,
+      .intro-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero::after {
+        width: 420px;
+        height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        height: 66px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .main-logo-wrap {
+        width: 134px;
+        height: 134px;
+        border-radius: 30px;
+        padding: 14px;
+      }
+
+      .hero::after {
+        width: 300px;
+        height: 300px;
+        top: 20%;
+        border-radius: 58px 100px 58px 100px;
+      }
+
+      .ornaments.left {
+        left: 14px;
+        top: 96px;
+      }
+
+      .ornaments.right {
+        right: 14px;
+        bottom: 86px;
+      }
+
+      .ornament {
+        width: 22px;
+        height: 22px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .cards-grid,
+      .program-grid,
+      .feature-grid,
+      .stats-grid,
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .organic-card,
+      .deep-card,
+      .contact-box {
+        border-radius: 28px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+
+  <header class="site-header" aria-label="رأس الصفحة">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="مؤسسة سراج">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="logo.png" alt="" class="brand-logo-img">
+        </span>
+        <span>مؤسسة سراج<small>بالعلم نرتقي</small></span>
+      </a>
+
+      <nav aria-label="روابط الموقع">
+        <ul class="nav-links">
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#values">قيمنا</a></li>
+          <li><a href="#programs">البرامج</a></li>
+          <li><a href="#why">لماذا سراج؟</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfZkbKzPYTflmNye3fPkZAEKgNLrSrtIGlZMSoCjQM46uoIGQ/viewform" target="_blank" rel="noopener noreferrer">انضم إلينا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-label="مقدمة مؤسسة سراج">
+      <svg class="arch-bg" viewBox="0 0 500 500" aria-hidden="true">
+        <path d="M250 20 C330 68 414 142 430 260 L430 460 L70 460 L70 260 C86 142 170 68 250 20Z" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <path d="M250 74 C310 113 374 172 386 270 L386 420 L114 420 L114 270 C126 172 190 113 250 74Z" fill="#ffffff" opacity="0.17"/>
+      </svg>
+
+      <div class="glow-star one" aria-hidden="true"></div>
+      <div class="glow-star two" aria-hidden="true"></div>
+
+      <div class="ornaments left" aria-hidden="true">
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3l5 11 12 6-12 6-5 11-5-11-12-6 12-6z" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3l5 11 12 6-12 6-5 11-5-11-12-6 12-6z" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      </div>
+
+      <div class="ornaments right" aria-hidden="true">
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3l5 11 12 6-12 6-5 11-5-11-12-6 12-6z" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3l5 11 12 6-12 6-5 11-5-11-12-6 12-6z" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        <svg class="ornament" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34M8 8l24 24M32 8L8 32" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      </div>
+
+      <div class="container hero-content">
+        <div class="main-logo-wrap">
+          <img src="logo.png" alt="شعار مؤسسة سراج" class="main-logo">
+        </div>
+
+        <div class="eyebrow">مؤسسة تربوية شبابية</div>
+        <h1>مؤسسة سراج</h1>
+        <p class="slogan">بالعلم نرتقي</p>
+        <p class="hero-text">
+          نعمل على بناء جيل شبابي رباني واعٍ وفاعل في مجتمعه، يجمع بين العلم والقيم والعمل، وينطلق بروح الإيمان لخدمة دينه وبلده ومجتمعه.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfZkbKzPYTflmNye3fPkZAEKgNLrSrtIGlZMSoCjQM46uoIGQ/viewform" target="_blank" rel="noopener noreferrer">انضم إلى سراج</a>
+          <a class="btn btn-secondary" href="#about">تعرّف علينا</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>تابع القراءة</span>
+        <div class="scroll-dots"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section id="about" class="intro">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">من نحن؟</span>
+          <h2>نور علم، وقيم، وعمل</h2>
+          <p>مؤسسة سراج تسعى إلى تقديم مساحة تربوية آمنة وهادفة، تساعد الشباب على النمو المتوازن فكرياً وإيمانياً واجتماعياً.</p>
+        </div>
+
+        <div class="intro-grid">
+          <article class="organic-card">
+            <p>
+              مؤسسة سراج مؤسسة تربوية تهدف إلى بناء جيل شبابي رباني فاعل في مجتمعه، من خلال تعزيز القيم الدينية وتنمية الوعي الثقافي والفكري عبر محاضرات علمية وبرامج تربوية ومبادرات موجهة للجيل الصاعد.
+            </p>
+            <br>
+            <p>
+              نؤمن أن التربية الحقيقية لا تقتصر على المعرفة وحدها، بل تجمع بين العلم، وحسن الخلق، والوعي، وروح المبادرة. لذلك تعمل المؤسسة على إعداد شباب قادرين على فهم واقعهم، وخدمة محيطهم، والمساهمة في بناء مستقبل أفضل بثقة ومسؤولية.
+            </p>
+          </article>
+
+          <div class="vision-mission">
+            <article class="deep-card">
+              <h3>الرؤية</h3>
+              <p>أن نبني جيلاً شبابياً فاعلاً في مجتمعه، محباً بروح الإيمان، قادراً على خدمة دينه وبلده، ومؤمناً بأن العلم والعمل هما طريق الرقي والنهضة.</p>
+            </article>
+            <article class="deep-card">
+              <h3>الرسالة</h3>
+              <p>تعزيز القيم الدينية وترسيخ العلاقة مع الله من خلال برامج تنموية شاملة تُعنى بالجيل الصاعد، وتساعده على بناء شخصية متوازنة وواعية ومؤثرة.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values" class="values">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">قيمنا</span>
+          <h2>الأسس التي تنطلق منها سراج</h2>
+          <p>نعمل بروح مؤسسية تجمع بين الجدية، والرحمة، والانضباط، والإيمان بقدرة الشباب على التغيير الإيجابي.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="value-card">
+            <div class="icon-badge" aria-hidden="true">✦</div>
+            <h3>الإيمان</h3>
+            <p>ترسيخ العلاقة مع الله وتعزيز القيم الدينية في السلوك اليومي.</p>
+          </article>
+          <article class="value-card">
+            <div class="icon-badge" aria-hidden="true">◆</div>
+            <h3>العلم</h3>
+            <p>نشر المعرفة والوعي، وتشجيع التعلم المستمر والتفكير البنّاء.</p>
+          </article>
+          <article class="value-card">
+            <div class="icon-badge" aria-hidden="true">●</div>
+            <h3>المسؤولية</h3>
+            <p>تنمية روح الالتزام وخدمة المجتمع والعمل الجاد لتحقيق الأثر.</p>
+          </article>
+          <article class="value-card">
+            <div class="icon-badge" aria-hidden="true">✧</div>
+            <h3>الانتماء</h3>
+            <p>تعميق حب الوطن والمجتمع، وتشجيع المشاركة الإيجابية فيهما.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="programs">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">البرامج والأنشطة</span>
+          <h2>مسارات عملية لبناء الإنسان</h2>
+          <p>تقدم المؤسسة أنشطة متنوعة تجمع بين المحاضرات، واللقاءات، والورش، والمبادرات الميدانية، بما يخدم الجيل الصاعد ويطور قدراته.</p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">01</div>
+            <h3>محاضرات علمية وتربوية</h3>
+            <p>لقاءات فكرية وتربوية تهدف إلى رفع الوعي، وتقريب المفاهيم، وربط العلم بالقيم والعمل.</p>
+          </article>
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">02</div>
+            <h3>برامج تنمية شبابية</h3>
+            <p>أنشطة تعنى ببناء الشخصية، وتقوية الثقة، وتنمية مهارات التواصل والقيادة والمسؤولية.</p>
+          </article>
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">03</div>
+            <h3>مبادرات مجتمعية</h3>
+            <p>مبادرات عملية تشجع الشباب على خدمة الناس، والتعاون، والمشاركة في صناعة أثر ملموس.</p>
+          </article>
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">04</div>
+            <h3>لقاءات إيمانية</h3>
+            <p>مساحات هادئة للتأمل، والذكر، وتعزيز الصلة بالله، وتثبيت المعاني الإيمانية في الحياة.</p>
+          </article>
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">05</div>
+            <h3>ورش مهارية</h3>
+            <p>ورش عملية تساعد المشاركين على اكتساب أدوات نافعة في التعلم، والتنظيم، والعمل الجماعي.</p>
+          </article>
+          <article class="program-card">
+            <div class="icon-badge" aria-hidden="true">06</div>
+            <h3>مرافقة وتوجيه</h3>
+            <p>متابعة تربوية وتشجيع مستمر يساعد الشباب على تحويل القيم إلى عادات وممارسات يومية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="why">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">لماذا سراج؟</span>
+          <h2>لأن الجيل الصاعد يحتاج إلى نور يرشده</h2>
+          <p>سراج ليست مجرد أنشطة متفرقة، بل مشروع تربوي يسعى لصناعة أثر مستدام في الفكر والسلوك والمجتمع.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>جدية في العمل</h3>
+            <p>نحرص على تقديم برامج منظمة وهادفة تعطي قيمة حقيقية للمشاركين وتراعي احتياجاتهم.</p>
+          </article>
+          <article class="feature-card">
+            <h3>هوية واضحة</h3>
+            <p>تنطلق المؤسسة من قيم دينية وتربوية راسخة، وتحافظ على خطاب متوازن يخاطب العقل والقلب.</p>
+          </article>
+          <article class="feature-card">
+            <h3>أثر مجتمعي</h3>
+            <p>نؤمن أن الشاب الواعي يصبح عنصراً فاعلاً في بيئته، قادراً على العطاء وخدمة الآخرين.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="مؤشرات تعريفية">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">ما الذي نطمح إليه؟</span>
+          <h2>أثر يتجاوز النشاط الواحد</h2>
+          <p>هذه المؤشرات تعبّر عن المسارات التي تركز عليها المؤسسة في رحلتها التربوية والمجتمعية.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><strong>01</strong><span>جيل واعٍ</span></div>
+          <div class="stat-card"><strong>02</strong><span>قيم راسخة</span></div>
+          <div class="stat-card"><strong>03</strong><span>علم نافع</span></div>
+          <div class="stat-card"><strong>04</strong><span>مجتمع أقوى</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" aria-label="الانضمام إلى مؤسسة سراج">
+      <div class="container">
+        <div class="join-card">
+          <h2>كن جزءاً من رحلة سراج</h2>
+          <p>إذا كنت تؤمن بأن العلم والقيم والعمل يمكن أن يصنعوا فرقاً حقيقياً، ندعوك للانضمام إلى برامج المؤسسة والمشاركة في مبادراتها.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfZkbKzPYTflmNye3fPkZAEKgNLrSrtIGlZMSoCjQM46uoIGQ/viewform" target="_blank" rel="noopener noreferrer">املأ استمارة الانضمام</a>
+            <a class="btn btn-secondary" href="#contact">تواصل معنا</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">تواصل معنا</span>
+          <h2>يسعدنا استقبال رسائلكم</h2>
+          <p>للاستفسار عن البرامج، أو تقديم اقتراح، أو طلب التعاون، يمكنكم استخدام النموذج التالي أو متابعة صفحات المؤسسة.</p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-box">
+            <h3>روابط المؤسسة</h3>
+            <p class="small-note">تابعوا أخبار مؤسسة سراج وأنشطتها عبر منصات التواصل الاجتماعي.</p>
+            <div class="social-list">
+              <a class="social-link" href="https://www.facebook.com/profile.php?id=61572905804096" target="_blank" rel="noopener noreferrer"><span>فيسبوك</span><span>↗</span></a>
+              <a class="social-link" href="https://www.instagram.com/siraj_org/" target="_blank" rel="noopener noreferrer"><span>إنستغرام</span><span>↗</span></a>
+              <a class="social-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfZkbKzPYTflmNye3fPkZAEKgNLrSrtIGlZMSoCjQM46uoIGQ/viewform" target="_blank" rel="noopener noreferrer"><span>استمارة الانضمام</span><span>↗</span></a>
+            </div>
+            <p class="small-note">ملاحظة: عند استخدام نموذج التواصل أول مرة، قد يطلب FormSubmit تأكيد البريد الإلكتروني قبل تفعيل استقبال الرسائل.</p>
+          </aside>
+
+          <div class="contact-box">
+            <form action="https://formsubmit.co/ahmad.tnayan@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="رسالة جديدة من موقع مؤسسة سراج">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="field-grid">
+                <label>الاسم الكامل
+                  <input type="text" name="name" placeholder="اكتب الاسم الكامل" required>
+                </label>
+                <label>البريد الإلكتروني
+                  <input type="email" name="email" placeholder="example@email.com" required>
+                </label>
+              </div>
+
+              <div class="field-grid">
+                <label>رقم الهاتف
+                  <input type="tel" name="phone" placeholder="اختياري">
+                </label>
+                <label>موضوع الرسالة
+                  <input type="text" name="topic" placeholder="مثال: استفسار عن البرامج">
+                </label>
+              </div>
+
+              <label>نص الرسالة
+                <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+              </label>
+
+              <button type="submit">إرسال الرسالة</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 مؤسسة سراج - جميع الحقوق محفوظة</p>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/profile.php?id=61572905804096" target="_blank" rel="noopener noreferrer">فيسبوك</a>
+        <a href="https://www.instagram.com/siraj_org/" target="_blank" rel="noopener noreferrer">إنستغرام</a>
+        <a href="#top">العودة للأعلى</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
